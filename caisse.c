@@ -2,6 +2,12 @@
 #include<stdlib.h>
 #include<time.h>
 
+void calcule_monnaie(double v1, double v2)
+{
+	double change=v1-v2;
+	printf("Votre monnaie : Rs %.2f\n", change);
+}
+
 int main()
 {
 	srand(time(NULL));
@@ -25,15 +31,7 @@ int main()
 		vPaiement+=paiementSup;
 	}
 
-	double change=vPaiement-vPayer;
-	if(change>0)
-	{
-		printf("Votre monnaie : Rs %.2f\n", change);
-	}	
-	else
-	{
-		printf("Paiement exact. Merci\n");
-	}
+	calcule_monnaie(vPaiement, vPayer);
+
 	return 0;
 }
-
